@@ -14,9 +14,9 @@
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/demo\/index-min.css",
-		"oF": 0,
+		"oF": 1,
 		"oS": 3
 		},
 	"\/demo\/index.html": {
@@ -56,9 +56,9 @@
 	"\/LICENSE": {
 		"cB": 0,
 		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/LICENSE",
-		"oF": 0
+		"oA": 1,
+		"oAP": "\/LICENSE.",
+		"oF": 1
 		},
 	"\/README.md": {
 		"cB": 0,
