@@ -66,7 +66,7 @@ $('window').jfPopUp({
 ```
 	
 ### Options as Data Attributes
-Options can also be passed through data attributes in the opening of the attached element. Note that the data attributes use dashes instead of camel case__.
+Options can also be passed through data attributes in the opening of the attached element. * __Note that the data attributes use dashes instead of camel case__.
 ```html
 <div class="popupme" 
 	data-message="Hello" 
@@ -103,7 +103,7 @@ These are the elements the plugin creates.
 * __.lb_lightbox__: The main parent element of lightboxload.
 * __.lb_shade__: The backdrop area.
 * __.lb_window__: The parent of the content area and close button. Gives you a layer to work with.
-* __.lb_content__: Where the external file will be loaded. If you choose iframe this will be an iFrame element.
+* __.lb_content__: Where the message be loaded.
 * __.lb_closeBtn__: The close button.
 
 ## Credits
