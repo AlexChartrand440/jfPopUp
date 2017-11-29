@@ -24,8 +24,7 @@ Just follow these steps to enable:
 
 4. Init the plugin by attaching it the elements you want responsible for launching external files.
     ```js
-    $(window).jfPopUp({message:'type your message here'});
-    $(window).data("jfPopUp").launch();
+    $(window).jfPopUp({auto:true, message:'type your message here'});
     ```
     
 ## Options and Defaults
@@ -35,7 +34,9 @@ __Options__ and *Defaults*
 
 #### Window Animation
 The window fades in by default, but you can pass it From and To properties via lists and CSS properties to change its animation. The out will be the reverse of what ever you set.
-* __message:__ *{'type your message here'}*  The message you want the popup to display.
+* __message:__ *'type your message here'*  The message you want the popup to display.
+* __auto:__ *false*  Launch message on page load.
+* mouseEvent:__ *'none'*  You can pass it a mouse event on the object to trigger launch.
 * __animationFrom:__ *{opacity:'0', 'margin-top':'100px'}*  The load window's animation starting properties.
 * __animationTo:__ *{opacity:'1', 'margin-top':'0px'}*  The load window's animation ending properties.
 * __pause:__ *0*  Pause time before the window comes in.
@@ -54,6 +55,8 @@ The window fades in by default, but you can pass it From and To properties via l
 Options can be passed as arguments through the init function.
 ```js
 $('window').jfPopUp({
+	message:'hello',
+	auto:true,
 	animationFrom:{opacity:'0', 'margin-top':'100px'},
 	animationTo:{opacity:'1', 'margin-top':'0px'},
 	pause:0,

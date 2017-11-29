@@ -13,6 +13,8 @@
         var defaults = {
             loadElement: 'body',
             message:"Hello :)",
+            auto:false,
+            mouseEvent:'none',
             animationFrom:{opacity:'0', 'margin-top':'100px'},
             animationTo:{opacity:'1', 'margin-top':'0px'},
             pause:0,
@@ -30,7 +32,18 @@
         plugin.init = function() {
             plugin.settings = $.extend({}, defaults, options, dataatts);             
             $ldElement = $(plugin.settings.loadElement);
+
+            if (plugin.settings.mouseEvent !=='none'){
+                $element.bind(plugin.settings.mouseEvent, onMouse);
+            }
         };
+        // mouse event
+        function onMouse(event){
+            event.preventDefault();              
+            plugin.launch();
+
+        }
+        
        
         function completed(){
             // add close functionality
@@ -42,7 +55,10 @@
             $mbWin.animate(plugin.settings.animationFrom, plugin.settings.speed, plugin.settings.ease, 
                 function(){    
                 $mb.animate({opacity:'.85'},plugin.settings.speed, "", 
-                    function(){      
+                    function(){
+                        if (plugin.settings.mouseEvent !=='none'){
+                            $element.unbind(plugin.settings.mouseEvent, onMouse);
+                        }      
                         $('.mb_closeBtn, .mb_shade').unbind('click');
                         $mb.remove();
                         plugin.settings.onClosed.apply(plugin,plugin.settings.onClosedArgs);
@@ -87,6 +103,12 @@
             $mbWin.delay(plugin.settings.pause).animate(plugin.settings.animationTo, plugin.settings.speed, plugin.settings.ease, completed);    
         };  
         plugin.init();
+
+
+        if (plugin.settings.auto){
+            plugin.launch();
+        }
+
     };
 
     $.fn.jfPopUp = function(options) {

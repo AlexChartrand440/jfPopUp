@@ -7,9 +7,6 @@
 <link href="../jfPopUp.css" rel="stylesheet" type="text/css" />
 <link href="index.css" rel="stylesheet" type="text/css" />
 
-
-
-
 </head>
 
 <body>
@@ -29,15 +26,12 @@
 <script type="text/javascript" src="../jquery.jfPopUp-min.js"></script>
 <script type="text/javascript">
   /* ===== init */
-  $(window).jfPopUp({message:'<h1>Hello</h1><p>This is a message.'});
   /* ===== launch on load */
-  $(window).data("jfPopUp").launch();
+  $(window).jfPopUp({auto:true, message:'<h1>Hello</h1><p>This is a message.'});
+  
 
   /* ===== launch on click */
-  $("nav#global a").click(function(){
-  	$(window).data("jfPopUp").launch();
-    return false;
-  });
+  $("nav#global a").jfPopUp({mouseEvent:'click', message:'<h1>Hello</h1><p>This is a message.'});
 </script>
 </body>
 </html>
