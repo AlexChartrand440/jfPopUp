@@ -1,5 +1,5 @@
 # jfPopUp
-jQuery plugin designed to load html popup message. 
+jQuery plugin designed to load html popup messages. 
 
 
 ## Script Set Up
@@ -27,6 +27,9 @@ Just follow these steps to enable:
     $(window).jfPopUp({auto:true, message:'type your message here'});
     ```
     
+## Demo
+https://codepen.io/fonstok/pen/yPQLQx
+
 ## Options and Defaults
 __Options__ and *Defaults*
 

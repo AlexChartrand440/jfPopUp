@@ -7,4 +7,14 @@ main {
 	width:90%;
 	margin:0 auto;
 }
+.anotherWay {
+	background-color:black;
+	padding:5px 20px;
+	border-radius:10px;
+	text-decoration:none;
+	z-index:1;
+	color:#FFF;
+	width:200px;
+	text-align:center;
+}
 

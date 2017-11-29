@@ -12,26 +12,35 @@
 <body>
 
 <main>
-    <h1>jquery.jfPopUp</h1>
-    <nav id="global">
-      <ul>
-        <li><a href="#">Link</a></li>
-        <li><a href="#">Link</a></li>  
-      </ul> 
-    </nav> 
+ <h1>jquery.jfPopUp</h1>
+ <nav id="global">
+  <ul>
+   <li><a href="#">launch the message</a></li>
+   <li><a href="#">launch the message</a></li>
+  </ul>
+ </nav>
+
+ <div class="anotherWay" data-message="<h1>Data Attribute</h1><p>This message is passed as a data attribute!" data-mouse-event="click">Another way</div>
 </main>  
 
 
 <script src="http://code.jquery.com/jquery.min.js"></script>
 <script type="text/javascript" src="../jquery.jfPopUp-min.js"></script>
 <script type="text/javascript">
-  /* ===== init */
   /* ===== launch on load */
-  $(window).jfPopUp({auto:true, message:'<h1>Hello</h1><p>This is a message.'});
+  $(window).jfPopUp({
+      auto:true, 
+     message:'<h1>Hello</h1><p>This is a message launched on load.'});
   
 
   /* ===== launch on click */
-  $("nav#global a").jfPopUp({mouseEvent:'click', message:'<h1>Hello</h1><p>This is a message.'});
+  $("nav#global a").jfPopUp({
+    mouseEvent:'click',
+     message:'<h1>Hello</h1><p>This is a message on click.'});
+
+/* ===== Arguments passed as data attributes on the element */
+$(".anotherWay").jfPopUp();
+
 </script>
 </body>
 </html>
