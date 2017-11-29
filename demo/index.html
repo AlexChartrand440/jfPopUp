@@ -29,13 +29,13 @@
 <script type="text/javascript" src="../jquery.jfPopUp-min.js"></script>
 <script type="text/javascript">
   /* ===== init */
-  $("body").jfPopUp({message:'<h1>Hello</h1><p>This website is a conceptual redesign project completed for the course Web Design II, not the actual website: <a href="http://www.google.com">website address</a>.</p><strong>The navigation links do not function</strong>'});
+  $(window).jfPopUp({message:'<h1>Hello</h1><p>This website is a conceptual redesign project completed for the course Web Design II, not the actual website: <a href="http://www.google.com">website address</a>.</p><strong>The navigation links do not function</strong>'});
   /* ===== launch on load */
-  $("body").data("jfPopUp").launch();
+  $(window).data("jfPopUp").launch();
 
   /* ===== launch on click */
   $("nav#global a").click(function(){
-  	$("body").data("jfPopUp").launch();
+  	$(window).data("jfPopUp").launch();
     return false;
   });
 </script>

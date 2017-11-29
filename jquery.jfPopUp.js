@@ -1,5 +1,9 @@
 (function($) {
 
+    var $jfPopUp = $.jfPopUp = function(element, options) {
+        return $(window).jfPopUp(element, options);
+    };
+
     $.jfPopUp = function(element, options) {
         var plugin = this;
         var $element = $(element);
@@ -9,7 +13,8 @@
         var dataatts = $element.data();
         var win = false;
 
-        console.log($element)
+        console.log($element);
+        
 
         var defaults = {
             loadElement: 'body',
