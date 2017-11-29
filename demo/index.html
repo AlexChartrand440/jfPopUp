@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<title>jfPopUp</title>
+<link href="../jfPopUp.css" rel="stylesheet" type="text/css" />
+<link href="index.css" rel="stylesheet" type="text/css" />
+
+
+
+
+</head>
+
+<body>
+
+<main>
+    <h1>jquery.jfPopUp</h1>
+    <nav id="global">
+      <ul>
+        <li><a href="#">Link</a></li>
+        <li><a href="#">Link</a></li>  
+      </ul> 
+    </nav> 
+</main>  
+
+
+<script src="http://code.jquery.com/jquery.min.js"></script>
+<script type="text/javascript" src="../jquery.jfPopUp-min.js"></script>
+<script type="text/javascript">
+  /* ===== init */
+  $("body").jfPopUp({message:'<h1>Hello</h1><p>This website is a conceptual redesign project completed for the course Web Design II, not the actual website: <a href="http://www.google.com">website address</a>.</p><strong>The navigation links do not function</strong>'});
+  /* ===== launch on load */
+  $("body").data("jfPopUp").launch();
+
+  /* ===== launch on click */
+  $("nav#global a").click(function(){
+  	$("body").data("jfPopUp").launch();
+    return false;
+  });
+</script>
+</body>
+</html>
