@@ -36,10 +36,10 @@ __Options__ and *Defaults*
 #### Window Animation
 The window fades in by default, but you can pass it From and To properties via lists and CSS properties to change its animation. The out will be the reverse of what ever you set.
 * __message:__ *{'type your message here'}*  The message you want the popup to display.
-* __animationFrom:__ *{opacity:'0'}*  The load window's animation starting properties.
-* __animationTo:__ *{opacity:'1'}*  The load window's animation ending properties.
+* __animationFrom:__ *{opacity:'0', 'margin-top':'100px'}*  The load window's animation starting properties.
+* __animationTo:__ *{opacity:'1', 'margin-top':'0px'}*  The load window's animation ending properties.
 * __pause:__ *0*  Pause time before the window comes in.
-* __speed:__ *500*  Speed of window animation.
+* __speed:__ *100*  Speed of window animation.
 * __ease:__ *'swing'*  You can pass the animation an ease, __but you must to link to a library or plugin such as, jqueryUI, that includes ease options__.
 
 #### Passing Functions
