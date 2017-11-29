@@ -16,31 +16,31 @@ Just follow these steps to enable:
     ```html
     <script src="jquery.jfPopUp.js"></script>
     ```
+3. Download and include jfPopUp.css in the head of the html.
 
-3. Init the plugin by attaching it the elements you want responsible for launching external files.
+    ```html
+    <link href="css/jfPopUp.css" rel="stylesheet" type="text/css" />
+    ```
+
+4. Init the plugin by attaching it the elements you want responsible for launching external files.
     ```js
-    $(window).jfPopUp();
+    $(window).jfPopUp({message:'type your message here'});
+    $(window).data("jfPopUp").launch();
     ```
     
 ## Options and Defaults
 __Options__ and *Defaults*
 #### Basics
 * __loadElement:__ *'body'* The element you want the light box to be loaded into.
-* __hash:__ *$element.attr('href')* The path to the file you want loaded. The default assumes you're using an anchor element so it references its href attribute. But, because this an option, you can use any element.  
-* __mouseEvent:__ *'click'* The mouse event that you want to trigger the loading. If you're not wanting it to trigger on a mouse event, set this to 'none' and use the public function launch() when you want the file to launch and load.
-* __iframe:__ *false* If you'd like to use an iframe set this to true.
 
 #### Window Animation
 The window fades in by default, but you can pass it From and To properties via lists and CSS properties to change its animation. The out will be the reverse of what ever you set.
+* __message:__ *{'type your message here'}*  The message you want the popup to display.
 * __animationFrom:__ *{opacity:'0'}*  The load window's animation starting properties.
 * __animationTo:__ *{opacity:'1'}*  The load window's animation ending properties.
 * __pause:__ *0*  Pause time before the window comes in.
 * __speed:__ *500*  Speed of window animation.
 * __ease:__ *'swing'*  You can pass the animation an ease, __but you must to link to a library or plugin such as, jqueryUI, that includes ease options__.
-
-#### Misc Options
-* __pathToScript:__ *null*  For straight loading you may want to trigger an external script after loading is completed – you pass the path here. Keep in mind that the path should be relative to the page you're loading into, not necessarily the page you're loading.
-* __useTransit:__ *false*  Transit.js is a swell CSS3 jQuery animation plugin. In the HTML, if you link to transit.js before the link to this plugin and set this to true, all of the animations will be CSS3 instead of the older jQuery animate method. http://ricostacruz.com/jquery.transit/
 
 #### Passing Functions
 * __onStart:__  You can pass a function to be called when the load has started.
@@ -53,9 +53,7 @@ The window fades in by default, but you can pass it From and To properties via l
 ### Options as Arguments
 Options can be passed as arguments through the init function.
 ```js
-$('.lbLoad').jfPopUp({
-	iframe:true,
-	mouseEvent:'mouseover',
+$('window').jfPopUp({
 	animationFrom:{opacity:'0', top:'80%'},
 	animationTo:{opacity:'1', top:'50%'},
 	pause:0,
@@ -72,7 +70,7 @@ $('.lbLoad').jfPopUp({
 ### Options as Data Attributes
 Options can also be passed through data attributes in the opening of the attached element. __Notice that the data attributes use dashes instead of camel case__.
 ```html
-<div class="lbLoad" 
+<div class="popupme" 
 	data-mouse-event="mouseover" 
 	data-hash="externalFile.html"
 	data-path-to-script="externalScript.js"
@@ -87,18 +85,17 @@ There are a few public functions that can be called at any time after init.
 * __init():__ This initates the plugin, this gets called automatically. 
 
 ```js
-$(".lbLoad").data("jfPopUp").launch();
-$(".lbLoad").data("jfPopUp").close();
-$(".lbLoad").data("jfPopUp").destroy();
-$(".lbLoad").data("jfPopUp").init();
+$(window).data("jfPopUp").launch();
+$(window).data("jfPopUp").close();
+$(window).data("jfPopUp").destroy();
+$(window).data("jfPopUp").init();
 ```
 ## Structure
-These are the elements the plugin creates. If you select the iFrame option *.lb_content* will be an iFrame.
+These are the elements the plugin creates.
 
 ```html
 <div class="lb_lightbox">
 	<div class="lb_shade"></div>
-	<div class="lb_loadAnimation">loading</div>
 	<div class="lb_window">
 		<div class="lb_content"><!--stuff gets loaded here --></div>
 		<div class="lb_closeBtn">close</div>
@@ -109,7 +106,6 @@ These are the elements the plugin creates. If you select the iFrame option *.lb_
 ### Classes
 * __.lb_lightbox__: The main parent element of lightboxload.
 * __.lb_shade__: The backdrop area.
-* __.lb_loadAnimation__: The loading animation.
 * __.lb_window__: The parent of the content area and close button. Gives you a layer to work with.
 * __.lb_content__: Where the external file will be loaded. If you choose iframe this will be an iFrame element.
 * __.lb_closeBtn__: The close button.
