@@ -36,7 +36,7 @@ __Options__ and *Defaults*
 The window fades in by default, but you can pass it From and To properties via lists and CSS properties to change its animation. The out will be the reverse of what ever you set.
 * __message:__ *'type your message here'*  The message you want the popup to display.
 * __auto:__ *false*  Launch message on page load.
-* mouseEvent:__ *'none'*  You can pass it a mouse event on the object to trigger launch.
+* __mouseEvent:__ *'none'*  You can pass it a mouse event on the object to trigger launch.
 * __animationFrom:__ *{opacity:'0', 'margin-top':'100px'}*  The load window's animation starting properties.
 * __animationTo:__ *{opacity:'1', 'margin-top':'0px'}*  The load window's animation ending properties.
 * __pause:__ *0*  Pause time before the window comes in.
