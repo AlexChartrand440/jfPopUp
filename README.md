@@ -100,7 +100,7 @@ These are the elements the plugin creates.
 ```
 
 ### Classes
-* __.mb_messagebox__: The main parent element of lightboxload.
+* __.mb_messagebox__: The main parent element.
 * __.mb_shade__: The backdrop area.
 * __.mb_window__: The parent of the content area and close button. Gives you a layer to work with.
 * __.mb_content__: Where the message be loaded.
