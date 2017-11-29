@@ -1,12 +1,12 @@
 @charset "UTF-8";
 /* light box */
-.lb_lightbox, .lb_lightbox h1, h2, h3, h4, p, div {
+.mb_messagebox, .mb_messagebox h1, h2, h3, h4, p, div {
 	box-sizing:border-box;
 	margin-top:0px;
 
 }
 
-.lb_lightbox {
+.mb_messagebox {
 	position:fixed; /*un-fix if you're not loading into body*/
 	z-index:200;/* z-index needs to be higher than any other elements in your page */
 	top:0px;
@@ -18,7 +18,7 @@
 	justify-content: center;	
 }
 
-.lb_shade {
+.mb_shade {
 	position:absolute;
 	top:0px;
 	left:0px;
@@ -29,7 +29,7 @@
 }
 
 /* main window */
-.lb_window {
+.mb_window {
 	position:absolute;
 	background-color:#FFFFFF;
 	border-radius: 19px;
@@ -42,7 +42,7 @@
 	max-height: 300px;
 	padding:40px;
 }
-.lb_content {
+.mb_content {
 	/*box-sizing:border-box;*/
 	position: relative;
 	width: 100%;
@@ -50,7 +50,7 @@
 	font-size: 20px;
 	line-height: 150%;
 }
-.lb_closeBtn {
+.mb_closeBtn {
 	position: absolute;
 	top: 10px;
 	right:10px;	
@@ -69,9 +69,9 @@
 	justify-content: center;
 	font-weight: bold;	
 }
-.lb_closeBtn:after {
+.mb_closeBtn:after {
     content: "+";
 }
-.lb_closeBtn:active {
+.mb_closeBtn:active {
     transform: rotate(45deg) scale(.9);
 }

@@ -90,21 +90,21 @@ $(window).data("jfPopUp").init();
 These are the elements the plugin creates.
 
 ```html
-<div class="lb_lightbox">
-	<div class="lb_shade"></div>
-	<div class="lb_window">
-		<div class="lb_content"><!--stuff gets loaded here --></div>
-		<div class="lb_closeBtn">close</div>
+<div class="mb_messagebox">
+	<div class="mb_shade"></div>
+	<div class="mb_window">
+		<div class="mb_content"><!--stuff gets loaded here --></div>
+		<div class="mb_closeBtn">close</div>
 	</div>
 </div>
 ```
 
 ### Classes
-* __.lb_lightbox__: The main parent element of lightboxload.
-* __.lb_shade__: The backdrop area.
-* __.lb_window__: The parent of the content area and close button. Gives you a layer to work with.
-* __.lb_content__: Where the message be loaded.
-* __.lb_closeBtn__: The close button.
+* __.mb_messagebox__: The main parent element of lightboxload.
+* __.mb_shade__: The backdrop area.
+* __.mb_window__: The parent of the content area and close button. Gives you a layer to work with.
+* __.mb_content__: Where the message be loaded.
+* __.mb_closeBtn__: The close button.
 
 ## Credits
 I used http://stefangabos.ro/jquery/jquery-plugin-boilerplate-revisited/ as a starting point for the plugin.

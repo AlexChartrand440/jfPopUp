@@ -5,8 +5,8 @@
         var plugin = this;
         var $element = $(element);
         var $ldElement;
-        var $lb;
-        var $lbWin;
+        var $mb;
+        var $mbWin;
         var dataatts = $element.data();
         var win = false;        
 
@@ -34,18 +34,18 @@
        
         function completed(){
             // add close functionality
-            $('.lb_closeBtn, .lb_shade').bind('click',plugin.close); 
+            $('.mb_closeBtn, .mb_shade').bind('click',plugin.close); 
             // call on complete function
             plugin.settings.onComplete.apply(plugin,plugin.settings.onCompleteArgs); 
         }
         plugin.close = function(){
-            $lbWin.animate(plugin.settings.animationFrom, plugin.settings.speed, plugin.settings.ease, 
+            $mbWin.animate(plugin.settings.animationFrom, plugin.settings.speed, plugin.settings.ease, 
                 function(){    
-                $lb.animate({opacity:'0'},plugin.settings.speed, "", 
+                $mb.animate({opacity:'0'},plugin.settings.speed, "", 
                     function(){      
-                        $('.lb_content').unload();
-                        $('.lb_closeBtn, .lb_shade').unbind('click');
-                        $lb.remove();
+                        $('.mb_content').unload();
+                        $('.mb_closeBtn, .mb_shade').unbind('click');
+                        $mb.remove();
                         plugin.settings.onClosed.apply(plugin,plugin.settings.onClosedArgs);
                         win = false;
                 });
@@ -66,13 +66,13 @@
             plugin.settings.onStart.apply(plugin,plugin.settings.onStartArgs);
             // make tags
             var tag = [];
-            tag.push('<div class="lb_lightbox">');
-            tag.push('<div class="lb_shade"></div>');
-            tag.push('<div class="lb_window">');
+            tag.push('<div class="mb_messagebox">');
+            tag.push('<div class="mb_shade"></div>');
+            tag.push('<div class="mb_window">');
             
-                tag.push('<div class="lb_content">'+plugin.settings.message+'</div>');
+                tag.push('<div class="mb_content">'+plugin.settings.message+'</div>');
             
-            tag.push('<div class="lb_closeBtn"></div>');
+            tag.push('<div class="mb_closeBtn"></div>');
             tag.push('</div></div>');
             var tagString = '';
             $(tag).each(function(index, element){
@@ -80,15 +80,14 @@
             });
             $ldElement.prepend(tagString);
             // cache objects 
-            $lb = $('.lb_lightbox');  
-            $lbWin = $('.lb_window');
+            $mb = $('.mb_messagebox');  
+            $mbWin = $('.mb_window');
           
             // shade animation
-            $('.lb_shade').css({opacity:'0'}).animate({opacity:'1'}, plugin.settings.speed);
+            $('.mb_shade').css({opacity:'0'}).animate({opacity:'1'}, plugin.settings.speed);
             // set, load, and animate window
-            $lbWin.css(plugin.settings.animationFrom); 
-            $lbWin.delay(plugin.settings.pause).animate(plugin.settings.animationTo, plugin.settings.speed, plugin.settings.ease, completed);    
-        
+            $mbWin.css(plugin.settings.animationFrom); 
+            $mbWin.delay(plugin.settings.pause).animate(plugin.settings.animationTo, plugin.settings.speed, plugin.settings.ease, completed);    
         };  
         plugin.init();
     };
