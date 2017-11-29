@@ -54,10 +54,10 @@ The window fades in by default, but you can pass it From and To properties via l
 Options can be passed as arguments through the init function.
 ```js
 $('window').jfPopUp({
-	animationFrom:{opacity:'0', top:'80%'},
-	animationTo:{opacity:'1', top:'50%'},
+	animationFrom:{opacity:'0', margin-top:'100px'},
+	animationTo:{opacity:'1', margin-top:'0px'},
 	pause:0,
-	speed:250,
+	speed:100,
 	ease:'swing',
 	onStart:function(){console.log("started")},
 	onComplete:function(){console.log("complete")},
