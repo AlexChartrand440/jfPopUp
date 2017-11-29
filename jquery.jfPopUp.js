@@ -55,10 +55,7 @@
             $mbWin.animate(plugin.settings.animationFrom, plugin.settings.speed, plugin.settings.ease, 
                 function(){    
                 $mb.animate({opacity:'.85'},plugin.settings.speed, "", 
-                    function(){
-                        if (plugin.settings.mouseEvent !=='none'){
-                            $element.unbind(plugin.settings.mouseEvent, onMouse);
-                        }      
+                    function(){     
                         $('.mb_closeBtn, .mb_shade').unbind('click');
                         $mb.remove();
                         plugin.settings.onClosed.apply(plugin,plugin.settings.onClosedArgs);
