@@ -66,7 +66,7 @@ $('window').jfPopUp({
 ```
 	
 ### Options as Data Attributes
-Options can also be passed through data attributes in the opening of the attached element. * __Note that the data attributes use dashes instead of camel case__.
+Options can also be passed through data attributes in the opening of the attached element. __Note that the data attributes use dashes instead of camel case__.
 ```html
 <div class="popupme" 
 	data-message="Hello" 
