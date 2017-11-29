@@ -41,9 +41,8 @@
         plugin.close = function(){
             $mbWin.animate(plugin.settings.animationFrom, plugin.settings.speed, plugin.settings.ease, 
                 function(){    
-                $mb.animate({opacity:'0'},plugin.settings.speed, "", 
+                $mb.animate({opacity:'.85'},plugin.settings.speed, "", 
                     function(){      
-                        $('.mb_content').unload();
                         $('.mb_closeBtn, .mb_shade').unbind('click');
                         $mb.remove();
                         plugin.settings.onClosed.apply(plugin,plugin.settings.onClosedArgs);
@@ -68,10 +67,8 @@
             var tag = [];
             tag.push('<div class="mb_messagebox">');
             tag.push('<div class="mb_shade"></div>');
-            tag.push('<div class="mb_window">');
-            
-                tag.push('<div class="mb_content">'+plugin.settings.message+'</div>');
-            
+            tag.push('<div class="mb_window">');    
+            tag.push('<div class="mb_content">'+plugin.settings.message+'</div>');     
             tag.push('<div class="mb_closeBtn"></div>');
             tag.push('</div></div>');
             var tagString = '';
